@@ -1,0 +1,21 @@
+apiVersion: ceph.rook.io/v1
+kind: CephCluster
+metadata:
+  name: rook-ceph-idx
+  namespace: rook-ceph-idx
+spec:
+  cephVersion:
+    # For the latest ceph images, see https://hub.docker.com/r/ceph/ceph/tags
+    image: ceph/ceph:v14.2.7
+  dataDirHostPath: /var/lib/rook-idx
+  mon:
+    count: 3
+  dashboard:
+    enabled: true
+  storage:
+    useAllNodes: false
+    useAllDevices: false
+  mgr:
+    modules:
+      - name: pg_autoscaler
+        enabled: true

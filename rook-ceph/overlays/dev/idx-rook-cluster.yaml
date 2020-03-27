@@ -1,0 +1,12 @@
+apiVersion: ceph.rook.io/v1
+kind: CephCluster
+metadata:
+  name: rook-ceph-idx
+  namespace: rook-ceph-idx
+spec:
+  storage:
+    devicePathFilter:  "^/dev/disk/by-id/scsi-0DO_Volume_disk-idx-[0-9]+"
+    nodes:
+      - name: "worker-0"
+      - name: "worker-1"
+      - name: "worker-2"

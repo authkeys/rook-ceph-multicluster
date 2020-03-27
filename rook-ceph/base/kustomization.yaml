@@ -1,0 +1,14 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- _common.yaml
+- _common_cluster_rolebindings.yaml
+- _operator.yaml
+- data_cluster_rolebindings.yaml
+- data-rook-cluster.yaml
+- data-storage-class.yaml
+- data-rook-dashboard-service.yaml
+- idx_cluster_rolebindings.yaml
+- idx-rook-cluster.yaml
+- idx-storage-class.yaml
+- idx-rook-dashboard-service.yaml

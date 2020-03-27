@@ -1,0 +1,12 @@
+apiVersion: ceph.rook.io/v1
+kind: CephCluster
+metadata:
+  name: rook-ceph-data
+  namespace: rook-ceph-data
+spec:
+  storage:
+    deviceFilter: sdc
+    nodes:
+      - name: "worker-1"
+      - name: "worker-2"
+      - name: "worker-3"
